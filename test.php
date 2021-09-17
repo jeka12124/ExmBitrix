@@ -2,21 +2,23 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"top_multi",
-	Array(
+	"bitrix:menu", 
+	"top_multi", 
+	array(
 		"ALLOW_MULTI_SELECT" => "N",
 		"CHILD_MENU_TYPE" => "left",
-		"COMPONENT_TEMPLATE" => "horizontal_multilevel",
+		"COMPONENT_TEMPLATE" => "top_multi",
 		"DELAY" => "N",
 		"MAX_LEVEL" => "3",
-		"MENU_CACHE_GET_VARS" => "",
+		"MENU_CACHE_GET_VARS" => array(
+		),
 		"MENU_CACHE_TIME" => "3600",
 		"MENU_CACHE_TYPE" => "N",
 		"MENU_CACHE_USE_GROUPS" => "Y",
 		"ROOT_MENU_TYPE" => "top",
 		"USE_EXT" => "N"
-	)
+	),
+	false
 );?><?$APPLICATION->IncludeComponent("bitrix:menu", "horizontal_multilevel1", Array(
 	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
 		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
